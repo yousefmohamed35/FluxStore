@@ -4,8 +4,10 @@ import 'package:fluxstore/core/service/service_locator.dart';
 import 'package:fluxstore/core/utils/app_router.dart';
 
 void main() async {
-  await getit<CacheHelper>().initialize();
+  WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
+  await getit<CacheHelper>().initialize();
+
   runApp(FluxStore());
 }
 
@@ -14,6 +16,9 @@ class FluxStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(routerConfig: AppRouter.router);
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

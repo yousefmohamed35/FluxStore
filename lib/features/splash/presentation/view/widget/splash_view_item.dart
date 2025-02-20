@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/styles.dart';
+import 'package:fluxstore/core/widgets/custom_button.dart';
 
 class SplashViewItem extends StatelessWidget {
   const SplashViewItem({super.key});
@@ -22,7 +21,6 @@ class SplashViewItem extends StatelessWidget {
         ),
         SizedBox(height: 60),
         CustomButton(),
-
         SizedBox(height: 100),
       ],
     );

@@ -1,6 +1,7 @@
 # fluxstore
 
 A new Flutter project.
+E-commerce App for tainging 
 
 ## Getting Started
 

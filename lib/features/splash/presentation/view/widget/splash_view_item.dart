@@ -31,12 +31,13 @@ class SplashViewItem extends StatelessWidget {
           SizedBox(height: 60),
           CustomButton(
             onTap: () {
-              bool isNot = getit.get<CacheHelper>().getBool(CacheKeys.introKey)??false;
+              bool isNot =
+                  getit.get<CacheHelper>().getBool(CacheKeys.introKey) ?? false;
               if (!isNot) {
                 GoRouter.of(context).pushReplacement(AppRouter.kIntroView);
+              } else {
+                GoRouter.of(context).pushReplacement(AppRouter.kSignUpView);
               }
-              
-             
             },
             text: 'Get Started',
           ),

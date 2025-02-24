@@ -39,7 +39,7 @@ class _IntroViewBodyState extends State<IntroViewBody> {
               style: Styles.textStyle14,
             ),
             const SizedBox(height: 300),
-            const Expanded(child: CustomUnderHalfIntroView()),
+            Expanded(child: CustomUnderHalfIntroView(current: currentPage)),
           ],
         ),
         Center(
@@ -47,9 +47,8 @@ class _IntroViewBodyState extends State<IntroViewBody> {
             height: 355,
             child: CustomPageViewIntroView(
               controller: controller,
-              currentPage: currentPage, images: [
-                AppImage.intro1,
-              ],
+              currentPage: currentPage,
+              images: [AppImage.intro1, AppImage.intro2, AppImage.intro3],
             ),
           ),
         ),

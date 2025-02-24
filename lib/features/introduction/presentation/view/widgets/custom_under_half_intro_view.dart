@@ -3,8 +3,8 @@ import 'package:fluxstore/core/widgets/custom_button.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/dot_indicator.dart';
 
 class CustomUnderHalfIntroView extends StatelessWidget {
-  const CustomUnderHalfIntroView({super.key});
-
+  const CustomUnderHalfIntroView({super.key, required this.current});
+  final int current;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,8 +16,8 @@ class CustomUnderHalfIntroView extends StatelessWidget {
           SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(3, (context) {
-              return DotIndicator();
+            children: List.generate(3, (index) {
+              return DotIndicator(selected: current == index);
             }),
           ),
           SizedBox(height: 30),

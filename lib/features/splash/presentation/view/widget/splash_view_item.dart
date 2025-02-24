@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/animation/animation_do.dart';
+import 'package:fluxstore/core/utils/app_router.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/core/widgets/custom_button.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewItem extends StatelessWidget {
   const SplashViewItem({super.key});
@@ -24,7 +26,11 @@ class SplashViewItem extends StatelessWidget {
             style: Styles.textStyle12.copyWith(color: Colors.white),
           ),
           SizedBox(height: 60),
-          CustomButton(onTap: () {  },),
+          CustomButton(
+            onTap: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kIntroView);
+            },
+          ),
           SizedBox(height: 100),
         ],
       ),

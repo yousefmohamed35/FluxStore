@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onTap});
-final void Function() onTap;
+  const CustomButton({super.key, required this.onTap, required this.text});
+  final void Function() onTap;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -27,7 +28,7 @@ final void Function() onTap;
               ),
             ),
             child: Text(
-              'Get Started',
+              text,
               style: Styles.textStyle16.copyWith(color: Colors.white),
             ),
           ),

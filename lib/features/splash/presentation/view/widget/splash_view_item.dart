@@ -24,7 +24,7 @@ class SplashViewItem extends StatelessWidget {
             style: Styles.textStyle12.copyWith(color: Colors.white),
           ),
           SizedBox(height: 60),
-          CustomButton(),
+          CustomButton(onTap: () {  },),
           SizedBox(height: 100),
         ],
       ),

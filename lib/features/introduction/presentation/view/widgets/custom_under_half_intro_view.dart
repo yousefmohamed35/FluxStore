@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/core/database/cache/cache_helper.dart';
+import 'package:fluxstore/core/database/cache/cache_keys.dart';
+import 'package:fluxstore/core/service/service_locator.dart';
 import 'package:fluxstore/core/widgets/custom_button.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/dot_indicator.dart';
 
@@ -21,7 +24,12 @@ class CustomUnderHalfIntroView extends StatelessWidget {
             }),
           ),
           SizedBox(height: 30),
-          CustomButton(onTap: () {}, text: 'Shopping Now'),
+          CustomButton(
+            onTap: () {
+              getit.get<CacheHelper>().setBool(CacheKeys.introKey, true);
+            },
+            text: 'Shopping Now',
+          ),
         ],
       ),
     );

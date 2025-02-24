@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/animation/animation_do.dart';
+import 'package:fluxstore/core/database/cache/cache_helper.dart';
+import 'package:fluxstore/core/database/cache/cache_keys.dart';
+import 'package:fluxstore/core/service/service_locator.dart';
 import 'package:fluxstore/core/utils/app_router.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/core/widgets/custom_button.dart';
@@ -28,7 +31,12 @@ class SplashViewItem extends StatelessWidget {
           SizedBox(height: 60),
           CustomButton(
             onTap: () {
-              GoRouter.of(context).pushReplacement(AppRouter.kIntroView);
+              bool isNot = getit.get<CacheHelper>().getBool(CacheKeys.introKey)??false;
+              if (!isNot) {
+                GoRouter.of(context).pushReplacement(AppRouter.kIntroView);
+              }
+              
+             
             },
             text: 'Get Started',
           ),

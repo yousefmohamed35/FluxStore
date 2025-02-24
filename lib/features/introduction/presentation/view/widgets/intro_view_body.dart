@@ -3,8 +3,26 @@ import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_intro_item.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_under_half_intro_view.dart';
 
-class IntroViewBody extends StatelessWidget {
+class IntroViewBody extends StatefulWidget {
   const IntroViewBody({super.key});
+
+  @override
+  State<IntroViewBody> createState() => _IntroViewBodyState();
+}
+
+class _IntroViewBodyState extends State<IntroViewBody> {
+  final PageController controller = PageController(viewportFraction: 0.8);
+  int currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    controller.addListener(() {
+      setState(() {
+        currentPage = controller.page!.round();
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +30,22 @@ class IntroViewBody extends StatelessWidget {
       children: [
         Column(
           children: [
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             Text('Discover something new', style: Styles.textStyle20),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               'Special new arrivals just for you',
               style: Styles.textStyle14,
             ),
-            SizedBox(height: 200),
-            Expanded(child: CustomUnderHalfIntroView()),
+            const SizedBox(height: 300),
+            const Expanded(child: CustomUnderHalfIntroView()),
           ],
         ),
-        Positioned(
-          top: 200,
-          right: 0,
-          left: 0,
-          child: CustomIntroItem(),
+        Center(
+          child: SizedBox(
+            height: 355,
+            child: CustomIntroItem(controller: controller, currentPage: currentPage),
+          ),
         ),
       ],
     );

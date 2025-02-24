@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/core/utils/app_image.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_page_view_intro_view.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_under_half_intro_view.dart';
@@ -46,7 +47,9 @@ class _IntroViewBodyState extends State<IntroViewBody> {
             height: 355,
             child: CustomPageViewIntroView(
               controller: controller,
-              currentPage: currentPage,
+              currentPage: currentPage, images: [
+                AppImage.intro1,
+              ],
             ),
           ),
         ),

@@ -30,6 +30,7 @@ class SplashViewItem extends StatelessWidget {
             onTap: () {
               GoRouter.of(context).pushReplacement(AppRouter.kIntroView);
             },
+            text: 'Get Started',
           ),
           SizedBox(height: 100),
         ],

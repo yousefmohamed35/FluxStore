@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/styles.dart';
-import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_intro_item.dart';
+import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_page_view_intro_view.dart';
 import 'package:fluxstore/features/introduction/presentation/view/widgets/custom_under_half_intro_view.dart';
 
 class IntroViewBody extends StatefulWidget {
@@ -44,11 +44,13 @@ class _IntroViewBodyState extends State<IntroViewBody> {
         Center(
           child: SizedBox(
             height: 355,
-            child: CustomIntroItem(controller: controller, currentPage: currentPage),
+            child: CustomPageViewIntroView(
+              controller: controller,
+              currentPage: currentPage,
+            ),
           ),
         ),
       ],
     );
   }
 }
-

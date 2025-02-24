@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/app_image.dart';
 
-class CustomIntroItem extends StatelessWidget {
-  const CustomIntroItem({
+class CustomPageViewIntroView extends StatelessWidget {
+  const CustomPageViewIntroView({
     super.key,
     required this.controller,
     required this.currentPage,
@@ -24,8 +24,7 @@ class CustomIntroItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
             child: Transform(
               alignment: Alignment.center,
-              transform:
-                  Matrix4.identity()..scale(1.0, isSelected ? 1 : 0.7),
+              transform: Matrix4.identity()..scale(1.0, isSelected ? 1 : 0.7),
               child: Card(
                 color: Colors.grey[300],
                 child: SizedBox(

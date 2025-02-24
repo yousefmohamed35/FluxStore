@@ -13,13 +13,14 @@ class CustomUnderHalfIntroView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(3, (context) {
               return DotIndicator();
             }),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 30),
           CustomButton(onTap: () {}, text: 'Shopping Now'),
         ],
       ),

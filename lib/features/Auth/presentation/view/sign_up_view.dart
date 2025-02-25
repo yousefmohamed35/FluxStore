@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
+import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_social_icon.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -26,16 +27,17 @@ class SignUpView extends StatelessWidget {
             SizedBox(height: 10),
             CustomTextField(text: 'confirm password'),
             SizedBox(height: 30),
-            Center(
-              child: CustomAuthButton(),
-            ),
+            Center(child: CustomAuthButton()),
+            SizedBox(height: 20),
+            Center(child: Text('or sign in with', style: Styles.textStyle12)),
+            SizedBox(height: 10),
+            CustomSocialIcon(),
           ],
         ),
       ),
     );
   }
 }
-
 
 
 class CustomTextField extends StatelessWidget {

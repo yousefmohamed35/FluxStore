@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/core/utils/app_image.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_social_icon.dart';
@@ -37,7 +38,7 @@ class SignUpView extends StatelessWidget {
               children: List.generate(3, (index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 16.0),
-                  child: CustomSocialIcon(),
+                  child: CustomSocialIcon(image: AppImage.socialIcons[index]),
                 );
               }),
             ),

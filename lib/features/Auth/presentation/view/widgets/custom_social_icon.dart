@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomSocialIcon extends StatelessWidget {
-  const CustomSocialIcon({super.key});
-
+  const CustomSocialIcon({super.key, required this.image});
+  final String image;
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
@@ -13,7 +13,7 @@ class CustomSocialIcon extends StatelessWidget {
         backgroundColor: Colors.white,
 
         radius: 25,
-        child:
+        child: Image.asset(image, filterQuality: FilterQuality.high),
       ),
     );
   }

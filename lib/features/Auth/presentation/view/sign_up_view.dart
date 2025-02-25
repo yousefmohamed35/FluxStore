@@ -31,14 +31,22 @@ class SignUpView extends StatelessWidget {
             SizedBox(height: 20),
             Center(child: Text('or sign in with', style: Styles.textStyle12)),
             SizedBox(height: 10),
-            CustomSocialIcon(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: List.generate(3, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: CustomSocialIcon(),
+                );
+              }),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, required this.text});

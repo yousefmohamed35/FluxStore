@@ -13,7 +13,7 @@ class CustomSocialIcon extends StatelessWidget {
         backgroundColor: Colors.white,
 
         radius: 25,
-        child: Icon(Icons.apple),
+        child:
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:fluxstore/features/Auth/presentation/view/forget_password_view.dart';
 import 'package:fluxstore/features/Auth/presentation/view/login_view.dart';
 import 'package:fluxstore/features/Auth/presentation/view/sign_up_view.dart';
 import 'package:fluxstore/features/introduction/presentation/view/intro_view.dart';
@@ -8,12 +9,15 @@ abstract class AppRouter {
   static const kIntroView = '/introView';
   static const kSignUpView = '/signUpView';
   static const kLoginView = '/loginView';
+  static const kForgetPasswordView = '/forgetPasswordView';
   static final router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => SplashView()),
       GoRoute(path: kIntroView, builder: (context, state) => IntroView(),),
        GoRoute(path: kSignUpView, builder: (context, state) => SignUpView(),),
-       GoRoute(path: kLoginView,builder: (context, state) => LoginView(),)
+       GoRoute(path: kLoginView,builder: (context, state) => LoginView(),),
+         GoRoute(path: kForgetPasswordView,builder: (context, state) => ForgetPasswordView(),),
+
     ],
   );
 }

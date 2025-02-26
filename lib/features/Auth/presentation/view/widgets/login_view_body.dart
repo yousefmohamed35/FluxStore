@@ -14,10 +14,9 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
-          SizedBox(height: 100),
+          SizedBox(height: 70),
           Text("Log into", style: Styles.textStyle25),
           SizedBox(height: 10),
           Text("your account", style: Styles.textStyle25),
@@ -32,12 +31,11 @@ class LoginViewBody extends StatelessWidget {
           ),
           SizedBox(height: 40),
           Center(child: CustomAuthButton(text: 'LOG IN', onPressed: () {})),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Center(child: Text('or sign in with', style: Styles.textStyle12)),
-          SizedBox(height: 10),
-          SocialIconRow(),
           SizedBox(height: 20),
-          Spacer(),
+          SocialIconRow(),
+          SizedBox(height: 50),
           AnotherOptionForAuth(
             text: "Don’t have an account?",
             link: 'Sign Up',

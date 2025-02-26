@@ -10,7 +10,11 @@ class ForgetPasswordButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
-      children: [Text('Forgot Password?', style: Styles.textStyle12)],
+      children: [GestureDetector(
+        onTap: (){
+          
+        },
+        child: Text('Forgot Password?', style: Styles.textStyle12))],
     );
   }
 }

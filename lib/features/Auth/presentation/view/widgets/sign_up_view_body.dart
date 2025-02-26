@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/utils/app_image.dart';
 import 'package:fluxstore/core/utils/styles.dart';
+import 'package:fluxstore/features/Auth/presentation/view/widgets/another_option_for_auth.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_social_icon.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_text_button.dart';
@@ -43,19 +44,13 @@ class SignUpViemBody extends StatelessWidget {
             }),
           ),
           SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Already have account ?', style: Styles.textStyle14),
-              SizedBox(width: 8),
-              CustomTextButton(),
-            ],
-          ),
+          AnotherOptionForAuth(),
         ],
       ),
     );
   }
 }
+
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, required this.text});

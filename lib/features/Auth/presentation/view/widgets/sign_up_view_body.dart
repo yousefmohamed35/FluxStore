@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/core/utils/app_router.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/another_option_for_auth.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/social_icon_row.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpViemBody extends StatelessWidget {
   const SignUpViemBody({super.key});
@@ -11,10 +13,9 @@ class SignUpViemBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
-          SizedBox(height: 100),
+          SizedBox(height: 50),
           Text("Create", style: Styles.textStyle25),
           SizedBox(height: 10),
           Text("your account", style: Styles.textStyle25),
@@ -33,7 +34,13 @@ class SignUpViemBody extends StatelessWidget {
           SizedBox(height: 10),
           SocialIconRow(),
           SizedBox(height: 20),
-          AnotherOptionForAuth(text: 'Already have account ?', link: 'Log in'),
+          AnotherOptionForAuth(
+            text: 'Already have account ?',
+            link: 'Log in',
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kLoginView);
+            },
+          ),
         ],
       ),
     );

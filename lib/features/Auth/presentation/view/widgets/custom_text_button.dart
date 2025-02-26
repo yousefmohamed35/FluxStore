@@ -3,8 +3,8 @@ import 'package:fluxstore/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({super.key});
-
+  const CustomTextButton({super.key, required this.link});
+  final String link;
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -13,7 +13,7 @@ class CustomTextButton extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kLoginView);
       },
       child: Text(
-        'Log In',
+        link,
         style: TextStyle(
           color: Colors.black,
           decoration: TextDecoration.underline,

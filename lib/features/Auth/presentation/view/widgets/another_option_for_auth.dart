@@ -4,17 +4,18 @@ import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_text_bu
 
 class AnotherOptionForAuth extends StatelessWidget {
   const AnotherOptionForAuth({
-    super.key,
+    super.key, required this.text, required this.link,
   });
-
+final String text;
+final String link;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Already have account ?', style: Styles.textStyle14),
+        Text(text, style: Styles.textStyle14),
         SizedBox(width: 8),
-        CustomTextButton(),
+        CustomTextButton(link: link ,),
       ],
     );
   }

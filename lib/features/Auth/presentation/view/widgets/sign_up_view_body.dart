@@ -27,20 +27,18 @@ class SignUpViemBody extends StatelessWidget {
           SizedBox(height: 10),
           CustomTextField(text: 'confirm password'),
           SizedBox(height: 30),
-          Center(child: CustomAuthButton()),
+          Center(child: CustomAuthButton(text: 'SIGN UP', onPressed: () {})),
           SizedBox(height: 20),
           Center(child: Text('or sign in with', style: Styles.textStyle12)),
           SizedBox(height: 10),
           SocialIconRow(),
           SizedBox(height: 20),
-          AnotherOptionForAuth(),
+          AnotherOptionForAuth(text: 'Already have account ?', link: 'Log in'),
         ],
       ),
     );
   }
 }
-
-
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, required this.text});

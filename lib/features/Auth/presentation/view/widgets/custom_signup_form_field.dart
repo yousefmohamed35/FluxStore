@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:fluxstore/core/functions/text_form_field_validation.dart';
+import 'package:fluxstore/core/widgets/custom_email_text_form_field.dart';
+import 'package:fluxstore/core/widgets/custom_password_form_field.dart';
 import 'package:fluxstore/core/widgets/custom_text_form_field.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
 
@@ -37,24 +39,15 @@ class _CustomSignupFormFieldState extends State<CustomSignupFormField> {
 
           CustomEmailTextFormField(emailController: emailController),
 
-          CustomTextFormField(
-            hintText: 'Password',
-            controller: passwordController,
-            obscureText: obscure,
-            suffix: IconButton(
-              onPressed: () {
-                setState(() {
-                  obscure = !obscure;
-                });
-              },
-              icon:
-                  obscure ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-            ),
-            validator: (password) {
-              return validatePassword(password);
+          CustomPasswordTextFormField(
+            passwordController: passwordController,
+            obscure: obscure,
+            onPressed: () {
+              setState(() {
+                obscure = !obscure;
+              });
             },
           ),
-
           CustomTextFormField(
             hintText: 'confirm Password',
             controller: confirmPasswordController,
@@ -100,4 +93,3 @@ class _CustomSignupFormFieldState extends State<CustomSignupFormField> {
     );
   }
 }
-

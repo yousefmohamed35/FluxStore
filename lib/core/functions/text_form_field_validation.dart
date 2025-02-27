@@ -1,10 +1,10 @@
 // email validation
 String? validateEmail(String? email) {
   final RegExp emailRegex = RegExp(
-    r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
   );
 
-  if (email == null || email.isEmpty ) {
+  if (email == null || email.isEmpty) {
     return "Email is required";
   } else if (!emailRegex.hasMatch(email)) {
     return "Invalid email format";
@@ -12,9 +12,9 @@ String? validateEmail(String? email) {
   return null;
 }
 
-// password validation 
+// password validation
 String? validatePassword(String? password) {
-  if (password==null || password.isEmpty) {
+  if (password == null || password.isEmpty) {
     return "Password is required";
   } else if (password.length < 8) {
     return "Password must be at least 8 characters long";
@@ -32,16 +32,17 @@ String? validatePassword(String? password) {
 
 // confirm password validation
 String? validateConfirmPassword(String? password, String? confirmPassword) {
-  if (confirmPassword==null || confirmPassword.isEmpty) {
+  if (confirmPassword == null || confirmPassword.isEmpty) {
     return "Confirm password is required";
   } else if (confirmPassword != password) {
     return "Passwords do not match";
   }
-  return "Passwords match";
+  return null;
 }
+
 // user name validation
 String? validateUsername(String? username) {
-  if (username==null || username.isEmpty) {
+  if (username == null || username.isEmpty) {
     return "Username is required";
   } else if (username.length < 3) {
     return "Username must be at least 3 characters long";

@@ -9,7 +9,7 @@ String? validateEmail(String? email) {
   } else if (!emailRegex.hasMatch(email)) {
     return "Invalid email format";
   }
-  return "Valid email";
+  return null;
 }
 
 // password validation 
@@ -27,7 +27,7 @@ String? validatePassword(String? password) {
   } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password)) {
     return "Password must contain at least one special character";
   }
-  return "Valid password";
+  return null;
 }
 
 // confirm password validation
@@ -48,5 +48,5 @@ String? validateUsername(String? username) {
   } else if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(username)) {
     return "Username can only contain letters, numbers, and underscores";
   }
-  return "Valid username";
+  return null;
 }

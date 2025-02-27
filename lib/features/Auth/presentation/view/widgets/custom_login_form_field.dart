@@ -56,6 +56,9 @@ class _CustomLoginFormFieldState extends State<CustomLoginFormField> {
               text: 'LOG IN',
               onPressed: () {
                 if (loginFormKey.currentState!.validate()) {
+                  FocusScope.of(context).unfocus();
+                  emailController.clear();
+                  passwordController.clear();
                   log("success");
                 } else {
                   log("not");

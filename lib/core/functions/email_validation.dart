@@ -39,3 +39,14 @@ String? validateConfirmPassword(String? password, String? confirmPassword) {
   }
   return "Passwords match";
 }
+// user name validation
+String? validateUsername(String? username) {
+  if (username==null || username.isEmpty) {
+    return "Username is required";
+  } else if (username.length < 3) {
+    return "Username must be at least 3 characters long";
+  } else if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(username)) {
+    return "Username can only contain letters, numbers, and underscores";
+  }
+  return "Valid username";
+}

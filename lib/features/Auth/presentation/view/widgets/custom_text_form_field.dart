@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxstore/core/functions/email_validation.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({super.key, required this.hintText});
@@ -6,10 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: InputDecoration(
-        hintText: 'Enter your text here',
-        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-      ),
-    );
+      validator: validateEmail(),
+      decoration: InputDecoration(hintText: hintText));
   }
 }

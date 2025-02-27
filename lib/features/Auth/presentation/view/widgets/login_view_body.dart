@@ -3,6 +3,7 @@ import 'package:fluxstore/core/utils/app_router.dart';
 import 'package:fluxstore/core/utils/styles.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/another_option_for_auth.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
+import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_text_form_field.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/forget_password_button.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/sign_up_view_body.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/social_icon_row.dart';
@@ -22,7 +23,7 @@ class LoginViewBody extends StatelessWidget {
           SizedBox(height: 10),
           Text("your account", style: Styles.textStyle25),
           SizedBox(height: 50),
-          CustomTextField(text: 'Email address'),
+          CustomTextFormField(hintText: 'Email Address'),
           SizedBox(height: 20),
           CustomTextField(text: 'Password'),
           SizedBox(height: 20),
@@ -47,5 +48,3 @@ class LoginViewBody extends StatelessWidget {
     );
   }
 }
-
-

@@ -6,27 +6,31 @@ class CustomPasswordTextFormField extends StatelessWidget {
   const CustomPasswordTextFormField({
     super.key,
     required this.passwordController,
-    required this.obscure, required this.onPressed,
+    required this.obscure,
+    required this.onPressed,
+    required this.text,
+    this.passwordText,
   });
-
+  final String? passwordText;
   final TextEditingController passwordController;
   final bool obscure;
-final void Function() onPressed;
+  final void Function() onPressed;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      hintText: 'Password',
+      hintText: text,
       controller: passwordController,
       obscureText: obscure,
       suffix: IconButton(
         onPressed: onPressed,
-        icon:
-            obscure ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+        icon: obscure ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
       ),
       validator: (password) {
-        return validatePassword(password);
+        return text == 'Password'
+            ? validatePassword(password)
+            : validateConfirmPassword(passwordText, password);
       },
     );
   }
 }
-

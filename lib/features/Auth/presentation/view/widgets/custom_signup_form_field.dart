@@ -47,29 +47,20 @@ class _CustomSignupFormFieldState extends State<CustomSignupFormField> {
                 obscure = !obscure;
               });
             },
+            text: 'Password',
           ),
-          CustomTextFormField(
-            hintText: 'confirm Password',
-            controller: confirmPasswordController,
-            obscureText: obscureConfirm,
-            suffix: IconButton(
-              onPressed: () {
-                setState(() {
-                  obscureConfirm = !obscureConfirm;
-                });
-              },
-              icon:
-                  obscureConfirm
-                      ? Icon(Icons.visibility_off)
-                      : Icon(Icons.visibility),
-            ),
-            validator: (confirmPassword) {
-              return validateConfirmPassword(
-                passwordController.text,
-                confirmPassword,
-              );
+          CustomPasswordTextFormField(
+            passwordController: confirmPasswordController,
+            obscure: obscureConfirm,
+            passwordText: passwordController.text,
+            onPressed: () {
+              setState(() {
+                obscureConfirm = !obscureConfirm;
+              });
             },
+            text: 'confirm Password',
           ),
+
           SizedBox(height: 10),
           Center(
             child: CustomAuthButton(

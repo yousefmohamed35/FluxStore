@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:fluxstore/core/functions/text_form_field_validation.dart';
-import 'package:fluxstore/core/widgets/custom_text_form_field.dart';
+import 'package:fluxstore/core/widgets/custom_email_text_form_field.dart';
+import 'package:fluxstore/core/widgets/custom_password_form_field.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/custom_auth_button.dart';
 import 'package:fluxstore/features/Auth/presentation/view/widgets/forget_password_button.dart';
 
@@ -23,30 +23,17 @@ class _CustomLoginFormFieldState extends State<CustomLoginFormField> {
       key: loginFormKey,
       child: Column(
         children: [
-          CustomTextFormField(
-            hintText: 'Email Address',
-            controller: emailController,
-            validator: (email) {
-              return validateEmail(email);
-            },
-          ),
+         CustomEmailTextFormField(emailController: emailController),
           SizedBox(height: 30),
-          CustomTextFormField(
-            hintText: 'Password',
-            controller: passwordController,
-            obscureText: obscure,
-            suffix: IconButton(
-              onPressed: () {
-                setState(() {
-                  obscure = !obscure;
-                });
-              },
-              icon:
-                  obscure ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-            ),
-            validator: (password) {
-              return validatePassword(password);
+           CustomPasswordTextFormField(
+            passwordController: passwordController,
+            obscure: obscure,
+            onPressed: () {
+              setState(() {
+                obscure = !obscure;
+              });
             },
+            text: 'Password',
           ),
           SizedBox(height: 20),
           ForgetPasswordButton(),

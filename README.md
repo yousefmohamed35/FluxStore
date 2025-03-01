@@ -2,7 +2,6 @@
 
 A new Flutter project.
 E-commerce App for tainging 
-for strike 
 
 ## Getting Started
 
